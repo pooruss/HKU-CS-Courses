@@ -12,9 +12,9 @@ def main(args):
     
     # Choose the algorithm
     if algorithm == 'SimpleSVM':
-        model = SimpleSVM(learning_rate=0.001, lambda_param=0.01, n_iters=1000)
+        model = SimpleSVM(args.config_file)
     elif algorithm == 'AdaBoost':
-        model = AdaBoost(n_clf=10)
+        model = AdaBoost(args.config_file)
     else:
         raise ValueError(f"Algorithm {algorithm} is not supported. Choose 'SimpleSVM' or 'AdaBoost'.")
     
@@ -29,6 +29,7 @@ def main(args):
 if __name__ == "__main__":
     # Parse command line arguments
     parser = argparse.ArgumentParser(description='Run the SVM or AdaBoost algorithm on a dataset.')
+    parser.add_argument('--config_file', type=str, required=True, help='The path to config file.')
     parser.add_argument('--input_file', type=str, required=True, help='The path to the CSV file containing the data.')
     parser.add_argument('--weights_save_file', type=str, required=True, help='The path to save the trained model.')
     parser.add_argument('--algorithm', type=str, required=True, choices=['SimpleSVM', 'AdaBoost'],

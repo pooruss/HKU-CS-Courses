@@ -1,11 +1,13 @@
 import json
 import pandas as pd
+import yaml
 import numpy as np
 from abc import ABC, abstractmethod
 np.random.seed(1)
 
 class BaseAlgorithm(ABC):
-    def __init__(self) -> None:
+    def __init__(self, config_file: str) -> None:
+        self.config = yaml.load(open(config_file, "r"), Loader=yaml.Loader)
         pass
 
     @abstractmethod
@@ -32,11 +34,11 @@ class SimpleSVM(BaseAlgorithm):
     """
     A simple implementation of a Support Vector Machine using gradient descent.
     """
-    def __init__(self, learning_rate=0.0001, lambda_param=0.01, n_iters=1000):
-        super().__init__()
-        self.lr = learning_rate
-        self.lambda_param = lambda_param
-        self.n_iters = n_iters
+    def __init__(self, config_file):
+        super().__init__(config_file)
+        self.lr = self.config["learning_rate"]
+        self.lambda_param = self.config["lambda_param"]
+        self.n_iters = self.config["n_iters"]
         self.w = None
         
     def fit(self, X, y):
@@ -66,9 +68,9 @@ class SimpleSVM(BaseAlgorithm):
     
 
 class AdaBoost(BaseAlgorithm):
-    def __init__(self, n_clf=5):
-        super().__init__()
-        self.n_clf = n_clf
+    def __init__(self, config_file):
+        super().__init__(config_file)
+        self.n_clf = self.config["n_clf"]
         self.alphas = []
         self.stumps = {}
 
