@@ -1,8 +1,5 @@
 import numpy as np
-import seaborn as sn
-import pandas as pd
-import matplotlib.pyplot as plt
-
+from visualization.utils import plot_matrix
 
 def MSE(y_test, y_pred):
     return np.sum(np.square(y_pred - y_test)) / y_pred.shape[0]
@@ -37,9 +34,3 @@ def confusion_matrix(true_labels, predicted_labels):
     plot_matrix(confusion)
     return confusion
 
-def plot_matrix(matrix):
-    df_cm = pd.DataFrame(matrix, range(len(matrix)), range(len(matrix)))
-    # plt.figure(figsize=(10,7))
-    sn.set(font_scale=1.4) # for label size
-    sn.heatmap(df_cm, annot=True, annot_kws={"size": 16}) # font size
-    plt.show()
