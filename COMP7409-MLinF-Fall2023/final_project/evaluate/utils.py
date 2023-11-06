@@ -1,6 +1,12 @@
 import numpy as np
 from visualization.utils import plot_matrix
 
+
+def get_accuracy(predictions, labels):
+    # Calculate accuracy
+    accuracy = np.mean(predictions == labels)
+    return accuracy
+
 def MSE(y_test, y_pred):
     return np.sum(np.square(y_pred - y_test)) / y_pred.shape[0]
 
@@ -23,7 +29,7 @@ def RMSE(y_test, y_pred):
     return pow(np.sum(np.square(y_pred - y_test)) / y_pred.shape[0], 0.5)
 
 
-def confusion_matrix(true_labels, predicted_labels):
+def confusion_matrix(predicted_labels, true_labels):
     unique_classes = np.unique(np.concatenate((true_labels, predicted_labels)))
     num_classes = len(unique_classes)
     confusion = np.zeros((num_classes, num_classes), dtype=int)
@@ -33,4 +39,3 @@ def confusion_matrix(true_labels, predicted_labels):
         confusion[true_class][predicted_class] += 1
     plot_matrix(confusion)
     return confusion
-

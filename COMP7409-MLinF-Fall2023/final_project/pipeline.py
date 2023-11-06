@@ -9,7 +9,6 @@ class Pipeline:
     def __init__(self, dataset, model):
         self.dataset = dataset
         self.model = model
-        self.accuracy = 0
 
     def run(self, weights_save_file):
         print(f"{Fore.GREEN}Running pipeline with model {self.model} and dataset {self.dataset.file_path}.{Style.RESET_ALL}")
@@ -25,17 +24,10 @@ class Pipeline:
         self.model.save_params(weights_save_file)
 
         # Make predictions
-        X_test, y_test = self.dataset.get_test_data()
+        X_test, _ = self.dataset.get_test_data()
         print(f"{Fore.YELLOW}Predicting...{Style.RESET_ALL}")
         predictions = self.model.predict(X_test)
         print(f"{Fore.GREEN}Finish predicting.{Style.RESET_ALL}")
-
-        # Calculate accuracy
-        self.accuracy = np.mean(predictions == y_test)
-        print(f"{Fore.RED}The accuracy is {str(self.accuracy)}{Style.RESET_ALL}")
-        
         return predictions
 
-    def get_accuracy(self):
-        return self.accuracy
     
