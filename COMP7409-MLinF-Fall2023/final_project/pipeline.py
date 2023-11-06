@@ -33,6 +33,8 @@ class Pipeline:
         # Calculate accuracy
         self.accuracy = np.mean(predictions == y_test)
         print(f"{Fore.RED}The accuracy is {str(self.accuracy)}{Style.RESET_ALL}")
+        
+        return predictions
 
     def get_accuracy(self):
         return self.accuracy
