@@ -1,5 +1,28 @@
 # Framework for ML in Finance
 
+## Project Introduction
+### Background
+Machine learning needs in the finance field: Machine learning algorithms can be used in many aspects such as risk management, asset management, market analysis and trading strategies, and have become a key tool in the field of finance and trading.
+
+### Goals and Significance
+#### Goals
+* Develop a custom Python machine learning framework
+* Intergrate basic machine learning algorithms implemented through packages such as numpy
+* Evaluate the algorithms in a variety of financial scenarios
+#### Significance
+* Develop a machine learning framework for the financial field to provide solutions more suitable for financial problems instead of just relying on general machine learning libraries
+* A framework for machine learning beginners to quickly get started with basic machine learning algorithms
+
+### Main Content
+! MainContent.png
+
+### Results and Evaluation
+
+
+### Future Work
+* Develop interactive UI
+* Intergrate More algorithms
+* Encapsulate the data preprocessing process to reduce the cost of getting started
 
 ## Main File Sturcture
 ```
