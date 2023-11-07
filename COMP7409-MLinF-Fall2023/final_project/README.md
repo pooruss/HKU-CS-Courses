@@ -14,7 +14,12 @@ Machine learning needs in the finance field: Machine learning algorithms can be 
 * A framework for machine learning beginners to quickly get started with basic machine learning algorithms
 
 ### Main Content
-! MainContent.png
+✨Here is an overview of this framework.
+<br>
+<div align="center">
+<img src="assets/overview.jpg" width="800px">
+</div>
+<br>
 
 ### Results and Evaluation
 
