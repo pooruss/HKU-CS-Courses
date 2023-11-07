@@ -17,7 +17,7 @@ Machine learning needs in the **finance** field: Machine learning algorithms can
 | Risk Management | Classification, Regression | Principle Component Analysis(PCA), Adaboost|
 | Financial Fraud Detection | Classification, Clustering | K-Nearest Neighbor(KNN), K-Means, DBSCAN |
 | Customer Relationship Management | Classification | Naive Bayes, Adaboost |
-| Financial Forcast | Regression | Support Vector Machine(SVM) |
+| Financial Forecast | Regression | Support Vector Machine(SVM) |
 | Investment and Asset Management | Regression | Linear Regression |
 
 ## 🎮 Other Machine learning Algorithms
