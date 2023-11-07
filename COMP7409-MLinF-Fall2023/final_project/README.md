@@ -12,11 +12,18 @@ Machine learning needs in the **finance** field: Machine learning algorithms can
 * A framework for machine learning beginners to quickly get started with basic machine learning algorithms
 
 ## 📈 Applications
-- Risk Management.
-Risk management is xxx, can be considered as a xxx task in machine learning. We 
+| Problem | Solution | Algorithm |
+| :----: | :----: | :----:|
+| Risk Management | Classification, Regression | Principle Component Analysis(PCA), Adaboost|
+| Financial Fraud Detection | Classification, Clustering | K-Nearest Neighbor(KNN), K-Means, DBSCAN |
+| Customer Relationship Management | Classification | Naive Bayes, Adaboost |
+| Financial Forcast | Regression | Support Vector Machine(SVM) |
+| Investment and Asset Management | Regression | Linear Regression |
 
-## 🎮 Machine learning Algorithms
-- SVM, that can tackle the classification problem, can be applied to the (one of the applications).
+## 🎮 Other Machine learning Algorithms
+- Multilayer Perceptron, used for classification / regression, can be applied to promotion, fraud detection and so on.
+- Decision Tree, used for classification, can be applied to direct marketing, risk management and so on.
+- ...
 
 ## 🎬 Demo
 Here is a demo of using svm on the netflix stock dataset to do finance prediction.
